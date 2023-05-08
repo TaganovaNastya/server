@@ -1,0 +1,37 @@
+GET / HTTP/1.1
+Host: 127.0.0.1:5500
+
+###
+
+GET /v2/comments HTTP/1.1
+Host: 127.0.0.1:5500
+Content-Type: application/json
+
+
+###
+
+GET /v2/stats HTTP/1.1
+Host: 127.0.0.1:5500
+Content-Type: text/html
+
+###
+
+POST /v2/comments HTTP/1.1
+Host: 127.0.0.1:5500
+Content-Type: application/json
+
+{
+    "name": "n.taganova@mail.ru",
+    "text": "печаль",
+    "data": ""
+}
+
+
+###
+
+GET /v2/comments/644ac3c2f90db0945a1e02b HTTP/1.1
+Host: 127.0.0.1:5500
+//Content-Type: application/json
+
+
+
