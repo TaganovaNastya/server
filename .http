@@ -3,35 +3,78 @@ Host: 127.0.0.1:5500
 
 ###
 
-GET /v2/comments HTTP/1.1
-Host: 127.0.0.1:5500
-Content-Type: application/json
-
-
-###
-
-GET /v2/stats HTTP/1.1
-Host: 127.0.0.1:5500
-Content-Type: text/html
-
-###
-
-POST /v2/comments HTTP/1.1
+POST /v3/API HTTP/1.1
 Host: 127.0.0.1:5500
 Content-Type: application/json
 
 {
-    "name": "n.taganova@mail.ru",
-    "text": "печаль",
-    "data": ""
+    "userName": "Maria"
+}
+
+###
+
+DELETE /v3/API/ HTTP/1.1
+Host: 127.0.0.1:5500
+apikey: 6001520e-c7e6-4535-8cac-6a596507a17e
+
+
+###
+
+GET /v3/Models HTTP/1.1
+Host: 127.0.0.1:5500
+Content-Type: application/json
+
+###
+
+GET /v3/Model/64707b7e63f946aed4726bd9 HTTP/1.1
+Host: 127.0.0.1:5500
+Content-Type: application/json
+
+###
+
+POST /v3/Model HTTP/1.1
+Host: 127.0.0.1:5500
+Content-Type: application/json
+apikey: a5c4729a-3199-40d8-b10c-b153cbd830af
+
+{
+    "userName": "Liza",
+    "modelName": "proekt11",
+    "modelType": ["kyb"], 
+    "description": "t.A.T.u.",
+    "comments": ["life kaif"]
+}
+
+###
+
+PUT /v3/Model/6470b482e5b0fc0954ced5d8 HTTP/1.1
+Host: 127.0.0.1:5500
+Content-Type: application/json
+apikey: a5c4729a-3199-40d8-b10c-b153cbd830af
+
+{
+    "userName": "Liza",
+    "modelName": "lr9",
+    "modelType": ["shera"], 
+    "description": "t.A.T.u.",
+    "comments": ["life kaif"]
+    
 }
 
 
 ###
 
-GET /v2/comments/644ac3c2f90db0945a1e02b HTTP/1.1
+DELETE /v3/Model/6470c196b206ec51b3e678ee HTTP/1.1
 Host: 127.0.0.1:5500
-//Content-Type: application/json
+Content-Type: application/json
+apikey: a5c4729a-3199-40d8-b10c-b153cbd830af
+
+
+
+
+
+
+
 
 
 
