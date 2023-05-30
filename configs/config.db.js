@@ -10,7 +10,7 @@ async function connectToMongoDB() {
       });
       await client.connect();
       console.log("Connected to MongoDB!");
-      const db = client.db("8lr");
+      const db = client.db("9lr");
       return db;
     } catch (error) {
       console.error("Error connecting to MongoDB:", error);

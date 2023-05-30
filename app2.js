@@ -1,6 +1,6 @@
 const express = require("express")
 
-const restApi = require('./v2/rest2')
+const restApi = require('./v3/rest3')
 
 const app = express();
 const helmet = require('helmet');
@@ -11,9 +11,9 @@ app.use(logger("dev"));
 app.use(helmet());
 
 app.use(express.static('public'))
-app.use('/v2', restApi);
+app.use('/v3', restApi);
 
-app.use((req,res)=>{
+app.use((err, req, res, next)=>{
         res.status(400);
         res.json({
                 status:"Error",
