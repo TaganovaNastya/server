@@ -16,7 +16,7 @@ async function GetApi(req, res, next) {
     }
 
     try {
-        const apiKey = await apiKeyServices.getApiKey(userName)
+        const apiKey = await apiKeyServices.GetApi(userName)
         res.json(apiKey);
     }
     catch (err) {
@@ -35,7 +35,7 @@ async function DeleteApi(req, res, next) {
     }
     else {
         try {
-            const deletedApiKey = await apiKeyServices.deleteApiKey(apiKey);
+            const deletedApiKey = await apiKeyServices.DeleteApi(apiKey);
             res.json(deletedApiKey);
         }
         catch (err) {
