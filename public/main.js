@@ -1,3 +1,4 @@
+let err = document.getElementById('err500');
 let apiKey = '';
 async function getApiKey() {
     const userName = document.getElementById('userName').value;
@@ -75,6 +76,7 @@ async function getApiKey() {
             }
         } catch (error) {
             console.error('Ошибка при получении моделей:', error);
+            err.textContent = `Ошибка при получении моделей`;
         }
         }
         
@@ -93,8 +95,9 @@ async function getApiKey() {
 
         async function deleteModel(modelId, apiKey) {
             if (!apiKey){
-                console.error('Отсутствует API ключ')
-                alert('API ключ не передан. Пожалуйста получите')
+                err.textContent = `Не предоставлен API ключ. ВВедите имя в поле`;
+                //console.error('Отсутствует API ключ')
+                //alert('API ключ не передан. Пожалуйста получите')
             }
             try {
                 const response = await fetch(`/v3/Model/${modelId}`, {
@@ -106,9 +109,11 @@ async function getApiKey() {
                 });
                 if (!response.ok) {
                     throw new Error('Ошибка при удалении модели');
+                    
                 }
             } catch (error) {
                 console.error('Ошибка при удалении модели:', error);
+                err.textContent = `Ошибка при удалении модели`;
             }
         }
           // Обработчик события для кнопки удаления модели
@@ -129,30 +134,31 @@ async function getApiKey() {
         function handleViewModel(event) {
             const viewBtn = event.target;
             const modelId = viewBtn.dataset.modelId;
-          
+    
             // Выполнение запроса к серверу для получения данных конкретной модели
             fetch(`/v3/Model/${modelId}`, {
-              method: 'GET',
-              headers: {
+            method: 'GET',
+            headers: {
                 'Content-Type': 'application/json',
                 'apikey': apiKey,
-              },
+            },
             })
-              .then((response) => {
+            .then((response) => {
                 if (response.ok) {
-                  return response.json();
+                return response.json();
                 } else {
-                  throw new Error('Ошибка при получении данных модели');
+                throw new Error('Ошибка при получении данных модели');
                 }
-              })
-              .then((data) => {
+            })
+            .then((data) => {
                 
                 alert(JSON.stringify(data, null, 2));
-              })
-              .catch((error) => {
+            })
+            .catch((error) => {
                 console.error('Ошибка при получении данных модели:', error);
-              });
-          }
+                err.textContent = `Ошибка при получении данных модели`;
+            });
+        }
 
 const modelsTable = document.getElementById('modelsTable');
         modelsTable.addEventListener('click', function (event) {
