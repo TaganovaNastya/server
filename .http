@@ -8,7 +8,7 @@ Host: 127.0.0.1:5500
 Content-Type: application/json
 
 {
-    "userName": "Maria"
+    "userName": "Kate"
 }
 
 ###
@@ -20,13 +20,13 @@ apikey: 6001520e-c7e6-4535-8cac-6a596507a17e
 
 ###
 
-GET /v3/Models HTTP/1.1
+GET /v3/Model HTTP/1.1
 Host: 127.0.0.1:5500
 Content-Type: application/json
 
 ###
 
-GET /v3/Model/64707b7e63f946aed4726bd9 HTTP/1.1
+GET /v3/Model/647798a243a45690eb967e10 HTTP/1.1
 Host: 127.0.0.1:5500
 Content-Type: application/json
 
@@ -35,10 +35,10 @@ Content-Type: application/json
 POST /v3/Model HTTP/1.1
 Host: 127.0.0.1:5500
 Content-Type: application/json
-apikey: a5c4729a-3199-40d8-b10c-b153cbd830af
+apikey: 5e13979a-cf19-40d4-84bf-c479f9549217
 
 {
-    "userName": "Liza",
+    "userName": "mini",
     "modelName": "proekt11",
     "modelType": ["kyb"], 
     "description": "t.A.T.u.",
@@ -64,10 +64,10 @@ apikey: a5c4729a-3199-40d8-b10c-b153cbd830af
 
 ###
 
-DELETE /v3/Model/6470c196b206ec51b3e678ee HTTP/1.1
+DELETE /v3/Model/6485cb9e8b7bff7535e46b53 HTTP/1.1
 Host: 127.0.0.1:5500
 Content-Type: application/json
-apikey: a5c4729a-3199-40d8-b10c-b153cbd830af
+apikey: e27fca53-4bb3-4bd6-abd6-850c139cbde4
 
 
 
