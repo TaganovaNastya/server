@@ -6,10 +6,11 @@ const restApi = require('./v3/rest3');
 const app = express();
 const helmet = require('helmet');
 const logger = require('morgan');
-
+const cors = require('cors')
 
 app.use(logger("dev"));
 app.use(helmet());
+app.use(cors())
 
 app.use(express.static('public'))
 app.use('/v3', restApi);

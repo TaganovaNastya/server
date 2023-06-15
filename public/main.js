@@ -92,12 +92,12 @@ async function getApiKey() {
 
 
 
-
+        //Удаляем модель
         async function deleteModel(modelId, apiKey) {
             if (!apiKey){
-                err.textContent = `Не предоставлен API ключ. ВВедите имя в поле`;
-                //console.error('Отсутствует API ключ')
-                //alert('API ключ не передан. Пожалуйста получите')
+                //err.textContent = `Не предоставлен API ключ. ВВедите имя в поле`;
+                console.error('Отсутствует API ключ')
+                alert('API ключ не передан. Пожалуйста получите')
             }
             try {
                 const response = await fetch(`/v3/Model/${modelId}`, {
@@ -111,6 +111,7 @@ async function getApiKey() {
                     throw new Error('Ошибка при удалении модели');
                     
                 }
+                err.style.display= 'none'
             } catch (error) {
                 console.error('Ошибка при удалении модели:', error);
                 err.textContent = `Ошибка при удалении модели`;
